@@ -18,7 +18,7 @@
 package com.azthec;
 
 //* IMPORTS: JDK/JRE
-	//* NOT NEEDED
+	import java.util.Random;
 //* IMPORTS: SPONGE
 	import org.spongepowered.api.event.block.BlockBreakEvent;
 	import org.spongepowered.api.event.block.BlockBurnEvent;
@@ -34,6 +34,8 @@ package com.azthec;
 
 public class Unleafer
 {
+	Random rand = new Random();
+
 	@Subscribe
 	public void onBlockBreak(BlockBreakEvent event)
 	{
@@ -82,7 +84,9 @@ public class Unleafer
 					if (!name.contains("leaves"))
 						continue;
 
-					loc.addScheduledUpdate(0, 1);
+					int delay = rand.nextInt(30) + 10;
+
+					loc.addScheduledUpdate(0, delay);
 				}
 			}
 		}
