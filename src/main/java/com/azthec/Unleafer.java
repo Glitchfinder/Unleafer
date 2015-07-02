@@ -57,7 +57,7 @@ public class Unleafer
 		String name = location.getBlockType().getName();
 		name = name.toUpperCase().toLowerCase();
 
-		if (!name.contains("log"))
+		if (!name.contains("log") && !name.contains("leaves"))
 			return;
 
 		checkBlocks(location);
@@ -82,7 +82,7 @@ public class Unleafer
 					if (!name.contains("leaves"))
 						continue;
 
-					loc.addScheduledUpdate(1, 5);
+					loc.addScheduledUpdate(0, 1);
 				}
 			}
 		}
