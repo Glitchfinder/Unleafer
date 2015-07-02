@@ -41,7 +41,7 @@ public class Unleafer
 	}
 
 	@Subscribe
-	public void onBlockBurn(BlockBreakEvent event)
+	public void onBlockBurn(BlockBurnEvent event)
 	{
 		checkLog(event.getBlock());
 	}
